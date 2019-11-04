@@ -28,7 +28,7 @@ function scssTask() {
         .pipe(sass())
         .pipe(postcss([ autoprefixer(), cssnano() ]))
         .pipe(sourcemaps.write('.'))
-        .pipe(dest(files.basePath + 'dist/css'))
+        .pipe(dest(files.dest + 'css/'))
         .pipe(browserSync.stream()
     );
 }
@@ -42,7 +42,7 @@ function jsTask() {
         ])
         .pipe(concat('app.js'))
         .pipe(uglify())
-        .pipe(dest(files.basePath + 'dist/js'))
+        .pipe(dest(files.dest + 'js/'))
         .pipe(browserSync.stream()
     );
 }
@@ -50,16 +50,16 @@ function jsTask() {
 // Images
 function imagesTask() {
 	return src(files.imagesPath)
-				.pipe(dest(files.basePath + 'dist/images'))
-				.pipe(browserSync.stream()
+            .pipe(dest(files.dest + 'images/'))
+            .pipe(browserSync.stream()
 		);
 }
 
 // Webfonts
 function fontsTask() {
 	return src(files.fontsPath)
-				.pipe(dest(files.basePath + 'dist/webfonts'))
-				.pipe(browserSync.stream()
+            .pipe(dest(files.dest + 'webfonts/'))
+            .pipe(browserSync.stream()
 		);
 }
 

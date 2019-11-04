@@ -1,5 +1,5 @@
-// Site Helpers
-@import 'helpers/helpers';
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Fonts
 @import '../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
@@ -10,14 +10,9 @@
 // CSS Framework of your choice
 @import '../../../node_modules/bootstrap/scss/bootstrap';
 
-// Global Styles
+// Variables
+@import 'variables';
+
+// Custom Stylesheets
 @import 'base/base';
-
-// Site layout [navigation & footer]
-@import 'layout/layout';
-
-// Modules [ e.g music player ]
-@import 'modules/modules';
-
-// Site pages
-@import 'templates/templates';
+@import 'templates/template';
